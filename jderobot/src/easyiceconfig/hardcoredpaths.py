@@ -19,26 +19,27 @@
 __author__ = 'varribas'
 
 import os
-# JdeRobot main Ice.Config path
-JDEROBOT_PATHS = "/usr/local/share/jderobot/conf"
-if not os.path.exists(JDEROBOT_PATHS):
+import platform
+
+if ('Windows')==platform.system():
     JDEROBOT_PATHS = ""
+    JDEROBOT_GAZEBO_PLUGINS_PATHS = ""
+else:
+# JdeRobot main Ice.Config path
+    JDEROBOT_PATHS = "/usr/local/share/jderobot/conf"
 
 
 # JdeRobot Gazebo's plugins Ice.Config path
 
-JDEROBOT_GAZEBO_PLUGINS_BASE_PATH = '/usr/local/share/jderobot/gazebo/plugins'
-if os.path.exists(JDEROBOT_GAZEBO_PLUGINS_BASE_PATH):
+    JDEROBOT_GAZEBO_PLUGINS_BASE_PATH = '/usr/local/share/jderobot/gazebo/plugins'
+
     gazebo_plugins = list()
     for dir in os.listdir(JDEROBOT_GAZEBO_PLUGINS_BASE_PATH):
         plugin_dir = os.path.join(JDEROBOT_GAZEBO_PLUGINS_BASE_PATH, dir)
         gazebo_plugins.append(plugin_dir)
+
     JDEROBOT_GAZEBO_PLUGINS_PATHS = ':'.join(str(x) for x in gazebo_plugins)
-else:
-    JDEROBOT_GAZEBO_PLUGINS_PATHS = ""
-
-
-
+    
 
 # "Hardcored" PATHS
 HARDCORED_PATHS = "%s:%s" %(JDEROBOT_PATHS, JDEROBOT_GAZEBO_PLUGINS_PATHS)
