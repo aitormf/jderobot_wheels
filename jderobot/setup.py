@@ -47,8 +47,8 @@ setup(
     url='https://github.com/jderobot/jderobot',
 
     # Author details
-    author='JdeRobot',
-    author_email='pypa-dev@googlegroups.com',
+    author='Aitor Martínez',
+    author_email='aitor.martinez.fernandez@gmail.com',
 
     # Choose your license
     license='MIT',
@@ -72,11 +72,11 @@ setup(
         # that you indicate whether you support Python 2, Python 3 or both.
         #'Programming Language :: Python :: 2',
         #'Programming Language :: Python :: 2.6',
-        'Programming Language :: Python :: 2.7',
+        #'Programming Language :: Python :: 2.7',
         #'Programming Language :: Python :: 3',
         #'Programming Language :: Python :: 3.3',
         #'Programming Language :: Python :: 3.4',
-        #'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.5',
     ],
 
     # What does your project relate to?

@@ -47,15 +47,18 @@ class Laser:
             exit(-1)
 
     def update(self):
-        if hasattr(self,"proxy") and self.proxy:
+        if self.hasproxy():
             laser = self.proxy.getLaserData()
 
             self.lock.acquire()
             self.laser = laser
             self.lock.release()
 
-    def getLaser(self):     
-        if hasattr(self,"proxy") and self.proxy:
+    def hasproxy (self):
+        return hasattr(self,"proxy") and self.proxy
+
+    def getLaserData(self):     
+        if self.hasproxy():
             self.lock.acquire()
             laser = self.laser
             self.lock.release()
@@ -86,5 +89,5 @@ class LaserClient:
     def stop(self):
         self.kill_event.set()
 
-    def getLaser(self):
-        return self.laser.getLaser()
+    def getLaserData(self):
+        return self.laser.getLaserData()

@@ -15,6 +15,7 @@ import cmdvel_ice
 import common_ice
 import containers_ice
 import datetime_ice
+import emSensor_ice
 import encoders_ice
 import exceptions_ice
 import genericData_ice
