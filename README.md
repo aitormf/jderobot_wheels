@@ -9,7 +9,7 @@ pip3 install wheel
 ## Create
 
 <pre>
-	python setup.py sdist bdist_wheel upload
+	python setup.py sdist bdist_wheel
 </pre>
 
 more info in: [http://pythonwheels.com/](http://pythonwheels.com/)
